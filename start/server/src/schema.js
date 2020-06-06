@@ -1,6 +1,12 @@
 import { qpl } from 'apollo-server';
 
 const typeDefs = gpl`
+  type Query {
+    launches: [Launch]!
+    launch(id: ID!): Launch
+    me: User
+  }
+
   type Launch {
     id: ID!
     site: String
