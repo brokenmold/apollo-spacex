@@ -1,6 +1,6 @@
-import { qpl } from 'apollo-server';
+import { gql } from 'apollo-server';
 
-const typeDefs = gpl`
+const typeDefs = gql`
   type Query {
     launches: [Launch]!
     launch(id: ID!): Launch
