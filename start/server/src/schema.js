@@ -13,6 +13,12 @@ const typeDefs = gql`
     login(email: String): String  ## Login Token ##
   }
 
+  type TripUpdateResponse {
+    success: Boolean!
+    message: String
+    launches: [Launch]
+  }
+
   type Launch {
     id: ID!
     site: String
