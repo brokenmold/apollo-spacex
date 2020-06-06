@@ -3,6 +3,8 @@ const typeDefs = require ('./schema');
 
 const server = new ApolloServer({ typeDefs });
 
-server.listen().then(({ url }) => {
+const PORT = 4010;
+
+server.listen(PORT).then(({ url }) => {
     console.log(`🚀 Server ready at ${url}`);
 });
