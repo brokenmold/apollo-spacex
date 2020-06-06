@@ -7,6 +7,12 @@ const typeDefs = gpl`
     me: User
   }
 
+  type Mutation {
+    bookTrips(launchIds: [ID]!): TripUpdateResponse!
+    cancelTrip(launchId: ID!): TripUpdateResponse!
+    login(email: String): String  ## Login Token ##
+  }
+
   type Launch {
     id: ID!
     site: String
