@@ -1,3 +1,5 @@
+const { paginateResults } = require('./utils');
+
 module.exports = {
     Query: {
       launches: (_, __, { dataSources }) =>
