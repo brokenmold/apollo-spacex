@@ -20,6 +20,7 @@ const typeDefs = gql`
   last item in the list. Pass this cursor to the launches query to fetch results
   after these.
   """
+  
   type LaunchConnection {
     cursor: String!
     hasMore: Boolean!
