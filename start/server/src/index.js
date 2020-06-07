@@ -29,6 +29,10 @@ const server = new ApolloServer({
   }),
   introspection: true,
   playground: true,
+  engine: {
+    apiKey: "service:Spacex-Apollo:F4nYmp4zp_k9klMAUtkglQ",
+  },
+  
 });
 
 const PORT = 4010;
