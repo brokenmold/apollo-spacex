@@ -13,7 +13,7 @@ const cache = new InMemoryCache();
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   cache,
   link: new HttpLink({
-    uri: 'http://64.225.119.112:4010/',
+    uri: 'http://64.225.119.112:4010/graphql',
     headers: {
       authorization: localStorage.getItem('token'),
     }, 
