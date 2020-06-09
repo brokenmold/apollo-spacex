@@ -1,12 +1,13 @@
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
-// import gql from 'graphql-tag';
+import { resolvers, typeDefs } from './resolvers';
 import { ApolloProvider } from '@apollo/react-hooks';
 import React from 'react';
 import ReactDOM from 'react-dom'; 
 import Pages from './pages';
 import injectStyles from './styles';
+
 
 const cache = new InMemoryCache();
 
@@ -18,6 +19,8 @@ const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
       authorization: localStorage.getItem('token'),
     }, 
   }),
+  typeDefs,
+  resolvers,
 });
 
 cache.writeData({
