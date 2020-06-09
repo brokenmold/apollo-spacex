@@ -9,13 +9,22 @@ import Pages from './pages';
 import injectStyles from './styles';
 
 const cache = new InMemoryCache();
-const link = new HttpLink({
-  uri: 'http://64.225.119.112:4010/'
-});
 
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   cache,
-  link
+  link: new HttpLink({
+    uri: 'http://64.225.119.112:4010/',
+    headers: {
+      authorization: localStorage.getItem('token'),
+    }, 
+  }),
+});
+
+cache.writeData({
+  data: {
+    isLoggedIn: !!localStorage.getItem('token'),
+    cartItems: [],
+  },
 });
 
 injectStyles();
